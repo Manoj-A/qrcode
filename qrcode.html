@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR Code</title>
+    <style>
+        .centered {
+            text-align: center;
+        }
+        .qr-code {
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centered">TO LET</h1>
+    <h1 class="centered">2-BHK</h1>
+    <!-- QR code will be generated here -->
+    <div id="qrcode" class="qr-code"></div>
+
+    <!-- Include the qrcode.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Function to generate the QR code
+        function generateQRCode() {
+            var url = "https://GitHub.com/manoj-tpvision/qr-code/enquire.html"; // Replace with your hosted URL
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 200, // Set the desired width of the QR code
+                height: 200, // Set the desired height of the QR code
+            });
+        }
+
+        // Generate the QR code on page load
+        window.onload = generateQRCode;
+    </script>
+</body>
+</html>
