@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR Code</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .left-aligned {
+            align-self: flex-start;
+            margin-left: 20px; /* Adjust the margin as needed */
+            font-size: 48px; /* Adjust the font size as needed */
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        .centered {
+            text-align: center;
+            font-size: 98px; /* Adjust the font size as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="left-aligned">
+        <h1>TO LET</h1>
+        <h1>SHOP</h1>
+    </div>
+    <!-- QR code will be generated here -->
+    <div id="qrcode" class="qr-code"></div>
+
+    <!-- Include the qrcode.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Function to generate the QR code
+        function generateQRCode() {
+            var url = "https://manoj-a.github.io/qrcode/enquire.html"; // Replace with your hosted URL
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 400, // Set the desired width of the QR code
+                height: 300, // Set the desired height of the QR code
+            });
+        }
+
+        // Generate the QR code on page load
+        window.onload = generateQRCode;
+    </script>
+</body>
+</html>
